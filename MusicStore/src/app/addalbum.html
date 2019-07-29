@@ -1,0 +1,51 @@
+<br><br><br>
+<p class="text-center"><font color="green" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"><h1>Add Album</h1></font></p>
+<div style="padding-left: 10px; padding-right: 10px;">
+    <div style="background-color:honeydew">
+<div class="border border-danger" ><br>
+
+<br>
+<!--Album Form Starts-->
+<form #empForm=ngForm (ngSubmit)="addData()">
+        <div class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">&nbsp;&nbsp;Album ID</label>
+                    <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                    <input type="text" class="form-control" name="id" id="aid" [(ngModel)]="albumId" #idControl="ngModel" placeholder="Enter Album ID" required  >
+<span  class="alert alert-danger" role="alert" *ngIf="idControl.touched && idControl.invalid"> Album ID is required</span>    
+                </div>
+                    </div>
+<!--Album Title Starts-->
+                    <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">&nbsp;&nbsp;Title</label>
+                                <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                                <input type="text" class="form-control" [(ngModel)]="albumTitle" id="title" name="atitle" #titleControl="ngModel" placeholder="Enter Album Title" required>
+                                <span  class="alert alert-danger" role="alert" *ngIf="titleControl.touched && titleControl.invalid">Album Title is required</span>    
+                            </div>
+                    </div>
+<!--Album Artist field Starts-->
+                    <div class="form-group row">
+                            <label for="inputCost" class="col-sm-2 col-form-label">&nbsp;&nbsp;Artist</label>
+                                <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                                <input type="text" class="form-control" [(ngModel)]="albumArtist" id="artist" name="aartist" #artistControl="ngModel" placeholder="Enter Artist Name" required>
+<span  class="alert alert-danger" role="alert" *ngIf="artistControl.touched && artistControl.invalid">Artist Name is required</span>
+                            </div>
+                    </div>
+<!--Album Price field Starts-->
+                    <div class="form-group row">
+                            <label for="inputCost" class="col-sm-2 col-form-label">&nbsp;&nbsp;Price</label>
+                                <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                                <input type="text" class="form-control" [(ngModel)]="albumPrice" id="price" name="aprice" #priceControl="ngModel"  placeholder="Enter Price" required>
+<span  class="alert alert-danger" role="alert" *ngIf="priceControl.touched && priceControl.invalid">Price is required</span>
+                            </div>
+                    </div>
+                    <br><br>
+                   
+ <!--Reset button to clear fields-->     
+ <input type="reset" class="btn btn-success" value="RESET">       
+                 &nbsp;
+                  &nbsp;
+ <!--Submit button to Add fields-->                  
+<input type ="submit" value="SAVE ALBUM" class="btn btn-primary" [disabled]="empForm.invalid" />
+    
+</form>
+</div></div></div>

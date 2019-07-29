@@ -1,0 +1,43 @@
+<style>
+        th
+        {
+        color: green;
+        text-align:center;
+        font-style:italic;
+        
+        
+        }
+        td
+        {
+        color: green;    
+        text-align:center;
+        font-style:italic;
+        
+        }</style>
+
+<!--Show All Albums-->
+
+<br>
+<br>
+<p class="text-center"><font text-align="centre" color="green" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"><h1>Album List</h1></font></p>
+<br>
+<table border="1"  style="background-color:honeydew" class=" table table-stripped">
+    <tr>
+        <th>Album ID</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Price</th>
+        <th>Action</th>
+        
+    </tr>
+    <tr *ngFor="let em of albumAll;let i=index">
+        <td>{{em.albumId}}</td>
+        <td>{{em.albumTitle}}</td>
+        <td>{{em.albumArtist}}</td>
+        <td>{{em.albumPrice}}</td>
+        <td>
+        <input type="button" class="btn btn-success" value="&nbsp;&nbsp;DELETE&nbsp;&nbsp;" (click)="deleteAlbum(i)"/>
+        </td>
+
+    </tr>
+</table>
